@@ -137,7 +137,6 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("colliding");
         TimerOn = true;
 
         // Set Collision Reaction
@@ -151,8 +150,7 @@ public class CharacterBehaviour : MonoBehaviour
         {
             // Recognize Collision
             isCollided = true;
-            Debug.Log(isCollided);
-            collisionResult = 0.2f;
+            collisionResult = 0.05f;
         }
         else if (collision.gameObject.tag == "Attacker")
         {
