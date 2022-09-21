@@ -5,7 +5,7 @@ using UnityEngine;
 public class entityMovement : MonoBehaviour
 {
     private Transform targetTransform;
-    private float targetSpeed = 0.002f;
+    private float targetSpeed = 0.03f;
     private string targetDirection = "up";
     private GameObject detectionZoneUp;
     private GameObject detectionZoneDown;
@@ -20,7 +20,7 @@ public class entityMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         // Move target according to current direction
