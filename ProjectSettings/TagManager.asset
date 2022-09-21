@@ -7,6 +7,7 @@ TagManager:
   - BigBoss
   - MediumTarget
   - Attacker
+  - detect
   layers:
   - Default
   - TransparentFX
