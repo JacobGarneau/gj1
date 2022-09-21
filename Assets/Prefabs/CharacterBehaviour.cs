@@ -128,7 +128,6 @@ public class CharacterBehaviour : MonoBehaviour
             }
             else if(TimeLeft <= 0)
             {
-                Debug.Log("Time is UP!");
                 isCollided = false;
                 TimerOn = false;
                 TimeLeft = 1f;
@@ -138,6 +137,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("colliding");
         TimerOn = true;
 
         // Set Collision Reaction
@@ -151,6 +151,7 @@ public class CharacterBehaviour : MonoBehaviour
         {
             // Recognize Collision
             isCollided = true;
+            Debug.Log(isCollided);
             collisionResult = 0.2f;
         }
         else if (collision.gameObject.tag == "Attacker")

@@ -69,7 +69,6 @@ public class BarBehaviour : MonoBehaviour
         // Check Character Collision
         if (bS.isCollided)
         {
-            Debug.Log(bS.isCollided);
             // React to Collision
             fillValue += bS.collisionResult;
             // Continuos Thirst Decline
@@ -80,7 +79,6 @@ public class BarBehaviour : MonoBehaviour
         }
         else
         {
-            Debug.Log(bS.isCollided);
             // Continuos Thirst Decline
             fillValue -= declineSpeed;
             // Assign Value to Slider
