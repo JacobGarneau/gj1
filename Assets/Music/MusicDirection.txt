@@ -1,0 +1,13 @@
+Bite - 弓矢が刺さる
+
+Heal - SNES-RPG04-12(Magic-Cure)
+
+Win - 決定ボタンを押す5
+
+Lose - GB-Action01-06(Miss)
+
+Title Screen - MusMus-BGM-089
+
+Level 1 - MusMus-BGM-136
+
+Level 2 - MusMus-BGM-143
