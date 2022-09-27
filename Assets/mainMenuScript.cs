@@ -8,7 +8,7 @@ public class mainMenuScript : MonoBehaviour
    // Code from Brackeys
    public void PlayGame ()
     {
-    SceneManager.LoadScene("lv1-jacob");
+    SceneManager.LoadScene("lv2-jacob");
     }
 
     public void QuitGame ()
