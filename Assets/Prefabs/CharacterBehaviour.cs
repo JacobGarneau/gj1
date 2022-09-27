@@ -29,6 +29,9 @@ public class CharacterBehaviour : MonoBehaviour
     public float TimeLeft = 1f;
     public bool TimerOn = false;
 
+    // Access Guard Status
+    public DeactivateGuard bS;
+
     void Start()
     {
         // Fetch Rigidbody
@@ -120,7 +123,7 @@ public class CharacterBehaviour : MonoBehaviour
 
 
         // COLLISION TIMER
-        if (TimerOn)
+        /* if (TimerOn)
         {
             if (TimeLeft > 0)
             {
@@ -133,6 +136,7 @@ public class CharacterBehaviour : MonoBehaviour
                 TimeLeft = 1f;
             }
         }
+        */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -150,11 +154,13 @@ public class CharacterBehaviour : MonoBehaviour
         {
             // Recognize Collision
             isCollided = true;
-            collisionResult = 0.05f;
+            collisionResult = 0.1f;
         }
-        else if (collision.gameObject.tag == "Attacker")
+        else if (collision.gameObject.tag == "Attacker" && bS.isActive == true)
         {
             // Recognize Collision
+            bS.isActive = false;
+            bS.TimerOn = true;
             isCollided = true;
             collisionResult = -0.2f;
         }
