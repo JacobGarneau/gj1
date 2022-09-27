@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterBehaviour : MonoBehaviour
 {
@@ -120,23 +121,6 @@ public class CharacterBehaviour : MonoBehaviour
                 isSpeeding = false;
             }
         }
-
-
-        // COLLISION TIMER
-        /* if (TimerOn)
-        {
-            if (TimeLeft > 0)
-            {
-                TimeLeft -= Time.deltaTime;
-            }
-            else if(TimeLeft <= 0)
-            {
-                isCollided = false;
-                TimerOn = false;
-                TimeLeft = 1f;
-            }
-        }
-        */
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -146,9 +130,9 @@ public class CharacterBehaviour : MonoBehaviour
         // Set Collision Reaction
         if (collision.gameObject.tag == "BigBoss")
         {
-            // Recognize Collision
-            isCollided = true;
-            collisionResult = 0.1f;
+            // Change Scene
+            SceneManager.LoadScene(3);
+
         }
         else if (collision.gameObject.tag == "MediumTarget")
         {
@@ -157,6 +141,19 @@ public class CharacterBehaviour : MonoBehaviour
             collisionResult = 0.1f;
         }
         else if (collision.gameObject.tag == "Attacker" && bS.isActive == true)
+        {
+            // Recognize Collision
+            // bS.isActive = false;
+            // bS.TimerOn = true;
+            // isCollided = true;
+            // collisionResult = -0.2f;
+        }
+    }
+
+    // GUARDS
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Attacker" && bS.isActive == true)
         {
             // Recognize Collision
             bS.isActive = false;

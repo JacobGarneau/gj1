@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeactivateGuard : MonoBehaviour
 {
     public bool isActive = true;
-    public float TimeLeft = 5f;
+    public float TimeLeft = 3f;
     public bool TimerOn = false;
 
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class DeactivateGuard : MonoBehaviour
             {
                 isActive = true;
                 TimerOn = false;
-                TimeLeft = 5f;
+                TimeLeft = 3f;
             }
         }
     }
