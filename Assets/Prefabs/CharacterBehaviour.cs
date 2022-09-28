@@ -138,7 +138,8 @@ public class CharacterBehaviour : MonoBehaviour
         {
             // Recognize Collision
             isCollided = true;
-            collisionResult = 0.1f;
+            collisionResult = 1f;
+            
         }
         else if (collision.gameObject.tag == "Attacker" && bS.isActive == true)
         {
@@ -159,7 +160,7 @@ public class CharacterBehaviour : MonoBehaviour
             bS.isActive = false;
             bS.TimerOn = true;
             isCollided = true;
-            collisionResult = -0.2f;
+            collisionResult = -0.3f;
         }
     }
 }

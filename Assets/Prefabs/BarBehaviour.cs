@@ -35,7 +35,7 @@ public class BarBehaviour : MonoBehaviour
         if (slider.value >= 3 * slider.maxValue / 4)
         {
             // Slow Damage
-            declineSpeed = 0.00001f;
+            declineSpeed = 0.00002f;
             // Bar Color
             fillImage.color = new Color(210f / 255f, 52f / 255f, 32f / 255f);
         }
@@ -49,7 +49,7 @@ public class BarBehaviour : MonoBehaviour
         else if (slider.value <= slider.maxValue / 4)
         {
             // Quick Damage
-            declineSpeed = 0.0002f;
+            declineSpeed = 0.00008f;
             // Bar Color
             fillImage.color = new Color(65f / 255f, 27f / 255f, 80f / 255f);
         }
@@ -92,6 +92,12 @@ public class BarBehaviour : MonoBehaviour
         {
             // React to Collision
             fillValue += bS.collisionResult;
+
+            if (fillValue > 1f)
+            {
+                fillValue = 1f;
+            }
+
             bS.isCollided = false;
             // Assign Value to Slider
             slider.value = fillValue;
