@@ -35,21 +35,21 @@ public class BarBehaviour : MonoBehaviour
         if (slider.value >= 3 * slider.maxValue / 4)
         {
             // Slow Damage
-            declineSpeed = 0.00002f;
+            declineSpeed = 0.00001f;
             // Bar Color
             fillImage.color = new Color(210f / 255f, 52f / 255f, 32f / 255f);
         }
         else if (slider.value <= 3 * slider.maxValue / 4 && slider.value >= slider.maxValue / 4)
         {
             // Medium Damage
-            declineSpeed = 0.00008f;
+            declineSpeed = 0.00004f;
             // Bar Color
             fillImage.color = new Color(138f / 255f, 30f / 255f, 56f / 255f);
         }
         else if (slider.value <= slider.maxValue / 4)
         {
             // Quick Damage
-            declineSpeed = 0.0005f;
+            declineSpeed = 0.0002f;
             // Bar Color
             fillImage.color = new Color(65f / 255f, 27f / 255f, 80f / 255f);
         }
