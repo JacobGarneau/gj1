@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
-    public GameObject target;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            // Destroy(gameObject);
-            //gameObject.SetActive(false);
-            target.SetActive(false);
-        }      
+    private void OnCollisionEnter2D(Collision2D collision) { 
+        gameObject.SetActive(false);
     }
 }

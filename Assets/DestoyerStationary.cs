@@ -5,19 +5,15 @@ using UnityEngine;
 public class DestoyerStationary : MonoBehaviour
 {
     // Variables;
-    public GameObject target;
     public GameObject targetSprite;
     public GameObject facingDirection;
     public GameObject detectionZone;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            target.SetActive(false);
+            gameObject.SetActive(false);
             targetSprite.SetActive(false);
             facingDirection.SetActive(false);
             detectionZone.SetActive(false);
-        }
     }
 }
